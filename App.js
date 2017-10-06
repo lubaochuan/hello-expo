@@ -24,8 +24,10 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <CounterButton />
-        <CounterButton />
+        <View style={{flexDirection: 'row'}}>
+          <CounterButton />
+          <CounterButton />
+        </View>
       </View>
     );
   }
