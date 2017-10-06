@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
-import { Constants, MapView } from 'expo';
+import { Constants, MapView, Video } from 'expo';
 
 class CounterButton extends Component {
   state = {
@@ -32,6 +32,16 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Video
+          source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+          rate={1.0}
+          volume={1.0}
+          muted={false}
+          resizeMode="cover"
+          shouldPlay
+          isLooping
+          style={{ width: 300, height: 300 }}
+        />
         <MapView
           style={{ alignSelf: 'stretch', height: 200 }}
           region={this.state.mapRegion}
