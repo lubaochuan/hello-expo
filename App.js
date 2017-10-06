@@ -6,9 +6,11 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.paragraph}>
-          hello world!
-        </Text>
+        <View style={{backgroundColor: 'white'}}>
+          <Text style={styles.paragraph}>
+            hello world!
+          </Text>
+        </View>
       </View>
     );
   }
