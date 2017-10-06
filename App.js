@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
-import { Constants } from 'expo';
+import { Constants, MapView } from 'expo';
 
 class CounterButton extends Component {
   state = {
@@ -21,9 +21,22 @@ class CounterButton extends Component {
 }
 
 export default class App extends Component {
+  state = {
+    mapRegion: { latitude: 37.78825, longitude: -122.4324, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }
+  };
+
+  _handleMapRegionChange = mapRegion => {
+    this.setState({ mapRegion });
+  };
+
   render() {
     return (
       <View style={styles.container}>
+        <MapView
+          style={{ alignSelf: 'stretch', height: 200 }}
+          region={this.state.mapRegion}
+          onRegionChange={this._handleMapRegionChange}
+        />
         <View style={{flexDirection: 'row'}}>
           <CounterButton />
           <CounterButton />
